@@ -19,4 +19,15 @@
         <p> У автора нет книг.</p>
     {% endif %}
     </div>
+    {% if perms.catalog.can_mark_returned %}
+            <a href="{% url 'author_update' author.pk %}">Update author</a> |
+            <a href="{% url 'author_delete' author.pk %}">Delete author</a>
+        </div>
+    {% endif %}
 {% endblock %}
+
+
+
+
+
+
